@@ -14,7 +14,7 @@ export default function Home() {
     accent: "#ffffff",
   });
 
-  // SAFE helper (prevents crashes from objects)
+  // 
   const safeText = (item: any) => {
     if (item === null || item === undefined) return "";
     if (typeof item === "string" || typeof item === "number") return item;
@@ -34,7 +34,7 @@ export default function Home() {
 
       setWorld({ ...data });
 
-      // 🎮 Scene-driven UI theme (fallback safe)
+      // 
       if (data?.scene) {
         setTheme({
           background:
@@ -56,7 +56,7 @@ export default function Home() {
         color: theme.accent,
       }}
     >
-      {/* 🎮 PIXEL SCENE BACKGROUND (LLM CONTROLLED) */}
+     
       <SceneRenderer scene={world?.scene} />
 
       {/* UI ABOVE SCENE */}
@@ -143,7 +143,6 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* CHOICES */}
               <div className="mt-6 grid grid-cols-1 gap-3">
                 {world.choices?.map((c: any, idx: number) => (
                   <button
@@ -152,7 +151,7 @@ export default function Home() {
                     disabled={loading}
                     className="p-4 border border-white/20 hover:bg-white hover:text-black transition text-left"
                   >
-                    ➤ {safeText(c)}
+                     {safeText(c)}
                   </button>
                 ))}
               </div>
